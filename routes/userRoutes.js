@@ -9,10 +9,12 @@ const {
   deleteUser,
 } = require("../controllers/userController");
 
+const { protectAdmin } = require("../middleware/adminAuthMiddleware");
+
 router.post("/", registerUser);
 router.post("/login", loginUser);
 router.get("/users", getUsers);
 router.get("/:id", getUser);
-router.delete("/:id", deleteUser);
+router.route("/:id").delete(protectAdmin, deleteUser);
 
 module.exports = router;
