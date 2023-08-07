@@ -48,8 +48,20 @@ const getUserAds = asyncHandler(async (req, res) => {
 })
 
 
+// @desc delete ad
+// @route DELETE /api/ad/:id
+// @access Not private
+
+const deleteAd = asyncHandler(async (req, res) => {
+  const ad = await Ad.deleteOne({ _id: req.params.id });
+  res.status(200).send(ad);
+});
+
+
+
 module.exports = {
     getAllAds,
     setAd,
-    getUserAds
+    getUserAds,
+    deleteAd
 }

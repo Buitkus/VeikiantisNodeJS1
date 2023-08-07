@@ -6,11 +6,14 @@ const { protect } = require('../middleware/authMiddleware');
 const {
     getAllAds,
     setAd,
-    getUserAds
+    getUserAds,
+    deleteAd
 } = require('../controllers/adController');
 
 router.route('/').get(getAllAds).post(protect, setAd);
 router.get('/users', protect, getUserAds);
+router.delete("/:id", protect, deleteAd)
 
 
 module.exports = router
+
