@@ -7,9 +7,9 @@ const {
   getUsers,
   getUser,
   deleteUser,
-} = require("../../controllers/userController");
+} = require("../controllers/userController");
 
-const { protectAdmin } = require("../../middleware/adminAuthMiddleware");
+const { protectAdmin } = require("../middleware/adminAuthMiddleware");
 
 router.post("/", registerUser);
 router.post("/login", loginUser);

@@ -39,7 +39,7 @@ const getAllCategories = asyncHandler(async (req, res) => {
 });
 
 // @desc Delete category
-// @route DELETE /api/user/:id
+// @route DELETE /api/category/:id
 // @access PRIVATE
 
 const deleteCategory = asyncHandler(async (req, res) => {
